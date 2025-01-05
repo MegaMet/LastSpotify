@@ -1,0 +1,17 @@
+C:\Users\Tevin\Documents\Projects\LastSpotify\bin\Debug\net9.0\LastSpotify.exe
+C:\Users\Tevin\Documents\Projects\LastSpotify\bin\Debug\net9.0\LastSpotify.deps.json
+C:\Users\Tevin\Documents\Projects\LastSpotify\bin\Debug\net9.0\LastSpotify.runtimeconfig.json
+C:\Users\Tevin\Documents\Projects\LastSpotify\bin\Debug\net9.0\LastSpotify.dll
+C:\Users\Tevin\Documents\Projects\LastSpotify\bin\Debug\net9.0\LastSpotify.pdb
+C:\Users\Tevin\Documents\Projects\LastSpotify\bin\Debug\net9.0\Python.Runtime.dll
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\LastSpotify.csproj.AssemblyReference.cache
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\LastSpotify.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\LastSpotify.AssemblyInfoInputs.cache
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\LastSpotify.AssemblyInfo.cs
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\LastSpotify.csproj.CoreCompileInputs.cache
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\LastSpot.25C91583.Up2Date
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\LastSpotify.dll
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\refint\LastSpotify.dll
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\LastSpotify.pdb
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\LastSpotify.genruntimeconfig.cache
+C:\Users\Tevin\Documents\Projects\LastSpotify\obj\Debug\net9.0\ref\LastSpotify.dll
