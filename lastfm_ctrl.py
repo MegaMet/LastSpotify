@@ -39,7 +39,7 @@ class Lastfm_ctrl:
         text = json.dumps(obj, sort_keys=True, indent= 4)
         print(text)
 
-    # the seach function of this API is not ideal as it has a chance of putting the correct artist down the JSON List
+    # the search function of this API is not ideal as it has a chance of putting the correct artist down the JSON List
     # need to make a function that compares the results and accurately selects the correct artist
     def search_artist(self, artist):
         response = self.lastfm_get({'method': ' artist.search', 'artist': artist})
@@ -49,10 +49,14 @@ class Lastfm_ctrl:
             dict.append(
                 {
                     'name': a['name'],
-                    'url': a['url']
+                    'url': a['url'],
+                    # 'mbid': a['mbid']
                 }
             )
-
+        response_2 = self.lastfm_get({'method': ' artist.getInfo', 'artist': artist})
+        j = response_2.json()
+        print("I AM HERE!")
+        self.print_json(j)
         return dict
 
     # take the result of the query and loop through them and convert them into a pandas data dictionary
@@ -64,10 +68,11 @@ class Lastfm_ctrl:
                 {
                     'name': a['name'],
                     'match': a['match'],
-                    'url': a['url']
+                    'url': a['url'],
+                    # 'mbid': a['mbid']
                 }
             )
-        # self.print_json(response.json())
+        self.print_json(response.json())
         return dict
 
 # input to enter artist

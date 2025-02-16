@@ -170,7 +170,7 @@ class Spotify_ctrl:
         else:
             print("no cached token")
 
-    def check_if_follow(self, artists):
+    def find_aritst(self, artists):
         spotify_results = []
         artist_ids = []
         pattern = r'[^A-Za-z0-9 ]'
@@ -180,14 +180,12 @@ class Spotify_ctrl:
             normalized_name = str(artist).lower().replace(" ","")
             # print(f"{artist} = Hash: {hash(artist)}")
             matching_name = ""
-            if not None in results:
+            if results is not None:
                 results = filter(None, results)
                 for result in results:
-                    print(result['name'])
                     normalized_result = str(result['name']).lower().replace(" ","")
                     if (normalized_result == normalized_name):
-                        matching_name = result['name']
-                        spotify_results.append(artist)
+                        spotify_results.append(result)
                         artist_ids.append(result['uri'])
                         # if (self.sp.current_user_following_artists(ids= result['id'])):
                         #     print('is following.')
@@ -208,21 +206,26 @@ class Spotify_ctrl:
             print("\n")
         following = []
         not_following = []
-        print(spotify_results)
+        print("START HERE!")
+        for result in spotify_results:
+            print(f"{result}/n")
+        return spotify_results
         # print(self.sp.current_user_following_artists(artist_ids))
-        return artist_ids
+        # return artist_ids
 
     def get_top_tacks(self, artists):
         for artist in artists:
-            print(artist)
-            results = self.sp.artist_top_tracks(artist_id= artist)
+            if artist is not None:
+                print(artist)
+                results = self.sp.artist_top_tracks(artist_id= artist)
 
-            for track in results['tracks'][:10]:
-                print('track    : ' + track['name'])
-                print('uri: ' + track['uri'])
+                # for track in results['tracks'][:3]:
+                #     print('track    : ' + track['name'])
+                #     print('uri: ' + track['uri'])
+                #     print()
+                print('track    : ' + results['tracks'][0]['name'])
                 print()
-            print('track    : ' + results['tracks'][0]['name'])
-            self.sp.add_to_queue(results['tracks'][0]['uri'])
+                self.sp.add_to_queue(results['tracks'][0]['uri'])
 
     def get_now_playing_artist(self):
         result = self.sp.currently_playing()
@@ -238,6 +241,7 @@ class Spotify_ctrl:
         album_name = result['item']['album']['name']
         song_name = result['item']['name']
 
+        now_playing = [artists_names, album_name, song_name]
         return artists_names, album_name, song_name
 
 ### Example result DO NOT DELETE THIS COMMENT! IT HAD TO BE REFORMATTED BY HAND
