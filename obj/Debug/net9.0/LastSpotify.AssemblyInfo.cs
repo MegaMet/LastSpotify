@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LastSpotify")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6650a22f90593155b0f133662e396f756b9504a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8282c3a0ee42974056f6fe020b3645656a1d5af")]
 [assembly: System.Reflection.AssemblyProductAttribute("LastSpotify")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LastSpotify")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,19 +3,25 @@ import requests
 import json
 import pandas as pd
 import io
+from dotenv import find_dotenv, load_dotenv
+
 
 from pandas import json_normalize
 from pandas.core.interchange.dataframe_protocol import DataFrame
 
 # TODO: Connect Last.fm API
 
-USER_AGENT = os.environ["USER_AGENT"]
-API_KEY = os.environ["API_KEY"]
+
 
 class Lastfm_ctrl:
 
     def __init__(self):
-        pass
+        self.dotenv_path = find_dotenv()
+        load_dotenv(self.dotenv_path)
+
+        self.USER_AGENT = os.environ["USER_AGENT"]
+        self.API_KEY = os.environ["API_KEY"]
+
 
     # Request to Last.fm to get a list of similar artist based on the query entered
     def thing (self, var):
@@ -24,11 +30,11 @@ class Lastfm_ctrl:
     def lastfm_get(self, payload):
 
         # define headers and URL
-        headers = {'user-agent' : USER_AGENT}
+        headers = {'user-agent' : self.USER_AGENT}
         url = 'http://ws.audioscrobbler.com/2.0'
 
         # add API key and format the payload
-        payload['api_key'] = API_KEY
+        payload['API_KEY'] = self.API_KEY
         payload['format'] = 'json'
 
         response = requests.get(url, headers= headers, params= payload)

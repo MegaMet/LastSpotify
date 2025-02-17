@@ -49,6 +49,7 @@ from symtable import Class
 import pandas as pd
 import random
 import os
+from dotenv import find_dotenv, load_dotenv
 
 # TODO: Connect Spotify API
 # CLIENTID = "environment variable SPOTIPY_CLIENT_ID"
@@ -62,6 +63,9 @@ from spotipy.oauth2 import SpotifyOAuth
 class Spotify_ctrl:
 
     def __init__(self):
+        self.dotenv_path = find_dotenv()
+        load_dotenv(self.dotenv_path)
+
         self.SPOTIPY_CLIENT_ID = os.environ["SPOTIPY_CLIENT_ID"]
         self.SPOTIPY_CLIENT_SECRET = os.environ["SPOTIPY_CLIENT_SECRET"]
         self.SPOTIPY_REDIRECT_URI = os.environ["SPOTIPY_REDIRECT_URI"]
